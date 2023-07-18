@@ -1,0 +1,11 @@
+digraph "order-application-service" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "com.online.ordering.system:order-application-service:jar"[label=<order-application-service>]
+  "com.online.ordering.system:order-domain-core:jar"[label=<order-domain-core>]
+
+  // Edge Definitions:
+  "com.online.ordering.system:order-application-service:jar" -> "com.online.ordering.system:order-domain-core:jar"
+}

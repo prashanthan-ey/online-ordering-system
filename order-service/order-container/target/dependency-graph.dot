@@ -1,0 +1,19 @@
+digraph "order-container" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "com.online.ordering.system:order-container:jar"[label=<order-container>]
+  "com.online.ordering.system:order-application-service:jar"[label=<order-application-service>]
+  "com.online.ordering.system:order-domain-core:jar"[label=<order-domain-core>]
+  "com.online.ordering.system:order-application:jar"[label=<order-application>]
+  "com.online.ordering.system:order-dataaccess:jar"[label=<order-dataaccess>]
+  "com.online.ordering.system:order-messaging:jar"[label=<order-messaging>]
+
+  // Edge Definitions:
+  "com.online.ordering.system:order-container:jar" -> "com.online.ordering.system:order-application-service:jar"
+  "com.online.ordering.system:order-container:jar" -> "com.online.ordering.system:order-domain-core:jar"
+  "com.online.ordering.system:order-container:jar" -> "com.online.ordering.system:order-application:jar"
+  "com.online.ordering.system:order-container:jar" -> "com.online.ordering.system:order-dataaccess:jar"
+  "com.online.ordering.system:order-container:jar" -> "com.online.ordering.system:order-messaging:jar"
+}

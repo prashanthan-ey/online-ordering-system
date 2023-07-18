@@ -1,0 +1,23 @@
+digraph "online-ordering-system" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "com.online.ordering.system:order-application-service:jar:compile"[label=<order-application-service>]
+  "com.online.ordering.system:order-domain-core:jar:compile"[label=<order-domain-core>]
+  "com.online.ordering.system:order-application:jar:compile"[label=<order-application>]
+  "com.online.ordering.system:order-dataaccess:jar:compile"[label=<order-dataaccess>]
+  "com.online.ordering.system:order-messaging:jar:compile"[label=<order-messaging>]
+  "com.online.ordering.system:order-container:jar:compile"[label=<order-container>]
+
+  // Edge Definitions:
+  "com.online.ordering.system:order-application-service:jar:compile" -> "com.online.ordering.system:order-domain-core:jar:compile"
+  "com.online.ordering.system:order-application:jar:compile" -> "com.online.ordering.system:order-application-service:jar:compile"
+  "com.online.ordering.system:order-dataaccess:jar:compile" -> "com.online.ordering.system:order-application-service:jar:compile"
+  "com.online.ordering.system:order-messaging:jar:compile" -> "com.online.ordering.system:order-application-service:jar:compile"
+  "com.online.ordering.system:order-container:jar:compile" -> "com.online.ordering.system:order-application-service:jar:compile"
+  "com.online.ordering.system:order-container:jar:compile" -> "com.online.ordering.system:order-domain-core:jar:compile"
+  "com.online.ordering.system:order-container:jar:compile" -> "com.online.ordering.system:order-application:jar:compile"
+  "com.online.ordering.system:order-container:jar:compile" -> "com.online.ordering.system:order-dataaccess:jar:compile"
+  "com.online.ordering.system:order-container:jar:compile" -> "com.online.ordering.system:order-messaging:jar:compile"
+}
